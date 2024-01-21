@@ -1,6 +1,7 @@
 /node_modules
 /pip
 /.venv
+venv
 /testfiles
 /storage
 /__pycache__
