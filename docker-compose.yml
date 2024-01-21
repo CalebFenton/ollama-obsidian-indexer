@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  ollama-obsidian-indexer:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - TZ=America/Chicago
+    volumes:
+      - ./INDEX_STORAGE:/app/.storage
+      # TODO: may be different since running as user
+      - ./huggingface_cache:/root/.cache/huggingface/
+    env_file:
+      - .env
+
+volumes:
+  INDEX_STORAGE:
+  huggingface_cache:
